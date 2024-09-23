@@ -4,7 +4,7 @@ node ('agent1') {
     checkout scm
   }
   stage('Build-and-Tag') {
-    app = docker.build("egorovanasta226@gmail.com/lab5")
+    app = docker.build("naonao69/lab5")
   }
   stage('Post-to-dockerhub') {
     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_creds') {
