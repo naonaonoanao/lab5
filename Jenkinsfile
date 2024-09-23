@@ -8,7 +8,7 @@ node ('agent1') {
   }
   stage('Post-to-dockerhub') {
     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub_creds') {
-      app.push("latest")
+      app.push("v1.0")
     }
   }
   stage('Pull-image-server') {
