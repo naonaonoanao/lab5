@@ -8,7 +8,6 @@ node ('agent1') {
   }
   stage('Post-to-dockerhub') {
     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub_creds') {
-      def app = docker.build("egorovanasta226@gmail.com/lab5")
       app.push("latest")
     }
   }
