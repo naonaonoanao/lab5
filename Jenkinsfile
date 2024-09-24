@@ -7,7 +7,7 @@ node ('agent1') {
     app = docker.build("naonao69/lab5")
   }
   stage('Post-to-dockerhub') {
-    docker.withRegistry('https://registry.hub.docker.com', 'b38da23d-c317-451c-81c5-44ff2eda94b1') {
+    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_creds') {
       app.push("latest")
     }
   }
